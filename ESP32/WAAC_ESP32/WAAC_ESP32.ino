@@ -209,6 +209,8 @@ void setup()
   //IPAddress primaryDNS(8, 8, 8, 8); //optional
   //IPAddress secondaryDNS(8, 8, 4, 4); //optional
 
+  // Set up a delay for WiFi at initial startup.
+  delay(3000);
 
   //************ wifi *******************
   // Static IP doesn't look like it works for the ESP32 at this point
