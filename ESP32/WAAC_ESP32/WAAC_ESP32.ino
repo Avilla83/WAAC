@@ -223,10 +223,20 @@ void setup()
   Serial.print("Connecting to ");
   Serial.println(config.ssid);
 
-  WiFi.begin(config.ssid, config.password);
+  delay(2000);
+
+  //status = WiFi.begin(config.ssid, config.password);
   
-  while (WiFi.status() != WL_CONNECTED) {
-    delay(500);
+  while (status != WL_CONNECTED) {
+    Serial.print("Attempting to connect to WEP network, SSID: ");
+    Serial.println(config.ssid);
+    status = WiFi.begin(config.ssid, config.password);
+
+    Serial.print("Status: ");
+    Serial.println(status);
+
+    // wait 10 seconds for connection:
+    delay(10000);
     Serial.print(".");
   }
 
